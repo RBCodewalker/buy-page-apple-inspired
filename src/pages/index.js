@@ -1,16 +1,17 @@
+import { useState } from "react";
+import Image from "next/image";
+
+import SelectedMaterial from "./components/selected-material";
+import DraggableIcon from "./components/draggable-icon";
+import SectionHeader from "./components/section-header";
+
 import Product1 from "../../public/alu-classic-matt.jpg";
 import Product2 from "../../public/alu-prime-lotus-seidenmatt.jpg";
 import Product3 from "../../public/alu-prime-hd-glanz.jpg";
 import Product4 from "../../public/alu-prime-metall-gebuerstet.jpg";
 import Product5 from "../../public/acryl-classic.jpg";
-import SelectedMaterial from "./components/selected-material";
-import DraggableIcon from "./components/draggable-icon";
-import { useState } from "react";
-import Image from "next/image";
-import SectionHeader from "./components/section-header";
 
 export default function Home() {
-  // const [iconPosition, setIconPosition] = useState({ x: 0, y: 0 });
   const [expandedIndex, setExpandedIndex] = useState(0);
 
   const products = [
@@ -19,7 +20,6 @@ export default function Home() {
       benefit1: "Hohe Farbbrillanz (7/10)",
       benefit2: "Pflegeleicht & schnelle Reinigung (7/10)",
       benefit3: "Sehr hohe Hitze-, Kratz- & Schlagfestigkeit (8/10)",
-      // benefit4: "Exzellente Hitze-,Kratz- & Schlagfestigkeit (9/10)",
       image: Product1,
       expanded: true,
     },
@@ -55,17 +55,12 @@ export default function Home() {
       benefit1: "Exzellente Farbbrillanz mit Tiefenwirkung (3D) (9/10)",
       benefit2: "Hohe Hitzebeständigkeit (7/10)",
       benefit3: "Pflegeleicht & schnelle Reinigung (7/10)",
-      // benefit4: "Exzellente Hitze-,Kratz- & Schlagfestigkeit (9/10)",
       image: Product5,
       expanded: false,
     },
   ];
 
   const imageUrl = "/nature.jpg";
-
-  // const handlePositionChange = (e) => {
-  //   this.setIconPosition({ x: 1, y: 2 });
-  // };
 
   return (
     <>
@@ -87,7 +82,7 @@ export default function Home() {
           </nav>
         </div>
       </div>
-      <div className="mx-auto mx-20 my-8 relative">
+      <div className="mx-20 my-8 relative">
         <h1 className="text-3xl font-bold my-4">
           Küchenrückwand - Blumenfeld mit Sonnenstrahlen <br />{" "}
         </h1>
@@ -114,8 +109,6 @@ export default function Home() {
                 isExpanded={index === expandedIndex}
                 currentIndex={index}
                 setExpandedIndex={setExpandedIndex}
-
-                // onExpand={() => handleExpand(index)}
               />
             </div>
           ))}

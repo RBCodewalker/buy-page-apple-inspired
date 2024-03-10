@@ -25,17 +25,17 @@ const DraggableIcon = ({ imageUrl, iconPosition }) => {
       const iconWidth = iconRef.current.offsetWidth;
       const iconHeight = iconRef.current.offsetHeight;
 
-      // Calculate unscaled coordinates relative to bottom-left corner
+      // unscaled coordinates relative to bottom-left corner
 
       let newX = event.clientX - imageRect.left - iconWidth / 2;
 
       let newY = imageHeight - (event.clientY - imageRect.top) - iconHeight / 2;
 
-      // Constrain unscaled coordinates within image boundaries
+      // unscaled coordinates within image boundaries
       newX = Math.max(0, Math.min(newX, imageWidth - iconWidth / 2));
       newY = Math.max(0, Math.min(newY, imageHeight - iconHeight / 2));
 
-      // Convert unscaled coordinates to scaled coordinates (each unit = 2px)
+      // unscaled coordinates to scaled coordinates
       const scaledX = Math.floor(newX); // Ensure whole number for X
       const scaledY = Math.floor(newY); // Ensure whole number for Y
       // console.log(scaledX, scaledY);
@@ -71,8 +71,10 @@ const DraggableIcon = ({ imageUrl, iconPosition }) => {
       maxNormalisedValue
     );
 
-    if (isNaN(value)) return; // Handle invalid input
+    if (isNaN(value)) return; // in case of invalid input
 
+    
+      // normalise values
     const newValue = normalise(value, 0, maxNormalisedValue, 0, maxValue);
 
     if (event.target.name === "x") {

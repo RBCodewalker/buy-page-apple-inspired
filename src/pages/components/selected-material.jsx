@@ -60,17 +60,17 @@ const SelectedMaterial = ({
                   }
                 >
                   <p>
-                    <AppleCheckmarkIcon /> {product.benefit1}
+                    <AppleCheckmarkIcon /> <span>{product.benefit1}</span>
                   </p>
                   <p>
-                    <AppleCheckmarkIcon /> {product.benefit2}
+                    <AppleCheckmarkIcon /> <span>{product.benefit2}</span>
                   </p>
                   <p>
-                    <AppleCheckmarkIcon /> {product.benefit3}
+                    <AppleCheckmarkIcon /> <span>{product.benefit3}</span>
                   </p>
                   {product.benefit4 && (
                     <p>
-                      <AppleCheckmarkIcon /> {product.benefit4}
+                      <AppleCheckmarkIcon /> <span>{product.benefit4}</span>
                     </p>
                   )}
                 </div>

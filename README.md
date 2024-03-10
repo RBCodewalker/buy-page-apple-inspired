@@ -4,7 +4,7 @@ In this project, the buy iphone page from Apple was taken as an inspiration to c
 
 1. Image with draggable icon on the left side
 2. Input Box (for x and y coordinates) that utilizes data-binding using props to dynamically update when the icon is dragged.
-   **Note**: Input and drag is limited to 300x150 using normalization to align with dimensions of the poster
+   **Note**: Input and drag is limited to 300x150 using normalisation to align with dimensions of the poster
 3. Material Selection section which has selected and non-selected states. Only one material can be selected at a time and at least one has to be selected. Default is first one.
 
 ## Local Installation
