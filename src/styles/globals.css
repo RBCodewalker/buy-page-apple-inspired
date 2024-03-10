@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* [contenteditable] ~ grammarly-extension,
+input ~ grammarly-extension,
+textarea ~ grammarly-extension {
+  display: none;
+} */
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"),
+    url(/public/fonts/sf-pro-display-cufonfonts/SF-Pro.ttf) format("ttf");
+}
+
+:root {
+  font-family: "SF Pro Display";
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+
+  background-color: var(--background-start-rgb);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* .product-card {
+  display: flex;
+  border: 2px solid green;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 24px;
+  box-shadow: 8px 8px 12px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; 
+}
+
+.product-card .top-right-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%); 
+  background-color: green; 
+  padding: 8px; 
+  border-radius: 0 0 0 18px; 
+  color: white; 
+} */
+
+.product-image {
+  /* flex: 1.5; */
+  overflow: hidden;
+  position: relative;
+  padding: 16px;
+}
+
+/* .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+} */
+
+.product-details {
+  flex: 3;
+}
+
+.product-details h2 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  font-weight: bold; /* Bold font for the product title */
+  color: green; /* Green color for the product title */
+}
+
+.product-details p {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center; /* Align items vertically in the flex container */
+}
+
+/* .product-details p AppleCheckmarkIcon {
+  margin-right: 8px;
+  color: green;
+  padding-right: 8px;
+} */
+
+/* .container {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.material-selection {
+  flex: 1;
+  margin-left: 20px; /* Adjust the margin as needed */
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .material-selection {
+    margin: 0; /* Reset margin for smaller screens */
+    width: 100%; /* Take up full width on smaller screens */
+  }
+}
